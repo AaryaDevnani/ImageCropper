@@ -1,0 +1,7 @@
+{
+  "name": "Image Cropper",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
