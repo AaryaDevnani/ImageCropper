@@ -1,20 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      Crop Image
     </ion-title>
+    <ion-button slot="end" (click)="dateFormatter()">
+      Date Formatter
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content padding text-center>
+  <ion-button fill="outline" (click)="selectImage()">
+    Pick Image to Crop
+  </ion-button>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card>
+    <ion-card-header>
+      Result
+    </ion-card-header>
+    <ion-card-content>
+      <image-cropper
+        [imageBase64]="base64Image"
+        [maintainAspectRatio]="true"
+        format="jpeg"
+        (imageCropped)="imageCropped($event)"
+        outputType="base64"
+      ></image-cropper>
+      <img [src]="croppedImagepath" />
+    </ion-card-content>
+    <ion-button fill="outline" (click)="savebase64str()">
+      Save File as Base64
+    </ion-button>
+    <ion-button fill="outline" (click)="copy()">
+      Copy
+    </ion-button>
+  </ion-card>
 </ion-content>

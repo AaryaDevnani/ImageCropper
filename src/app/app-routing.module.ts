@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'date-formatter',
+    loadChildren: () => import('./date-formatter/date-formatter.module').then( m => m.DateFormatterPageModule)
+  },
 ];
 
 @NgModule({

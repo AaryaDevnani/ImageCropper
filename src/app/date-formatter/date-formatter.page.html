@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Date Formatter</ion-title>
+    <ion-button slot="end" (click)="imageCropper()">
+      Image Cropper
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-header>Enter Date:</ion-header>
+      <ion-input
+        type="tel"
+        [(ngModel)]="unformattedDate"
+        placeholder="DDMMYYYY"
+      ></ion-input>
+      <ion-button fill="outline" (click)="format()">
+        Format
+      </ion-button>
+      <ion-header *ngIf="showResult">Formatted Date</ion-header>
+      <ion-item lines="none" *ngIf="showResult" [innerHtml]="date"> </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

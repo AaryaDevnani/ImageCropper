@@ -1,7 +1,8 @@
 {
   "name": "Image Cropper",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
