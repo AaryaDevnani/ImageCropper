@@ -10,17 +10,14 @@
 <ion-content>
   <ion-card>
     <ion-card-content>
+      {{clear()}}
       <ion-header>Enter Date:</ion-header>
       <ion-input
         type="tel"
         [(ngModel)]="unformattedDate"
         placeholder="DDMMYYYY"
+        maxlength="8"
       ></ion-input>
-      <ion-button fill="outline" (click)="format()">
-        Format
-      </ion-button>
-      <ion-header *ngIf="showResult">Formatted Date</ion-header>
-      <ion-item lines="none" *ngIf="showResult" [innerHtml]="date"> </ion-item>
     </ion-card-content>
   </ion-card>
 </ion-content>
