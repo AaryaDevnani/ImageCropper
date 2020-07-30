@@ -21,25 +21,40 @@ export class DateFormatterPage implements OnInit {
 
   format() {
     this.day = this.unformattedDate.toString().slice(0, 2);
-    console.log(this.day);
     this.month = this.unformattedDate.toString().slice(2, 4);
-    console.log(this.month);
+
     this.year = this.unformattedDate.toString().slice(4);
-    console.log(this.year);
-    this.date = this.day + "-" + this.month + "-" + this.year;
-    this.unformattedDate = this.date;
-    this.showResult = true;
+
+    if (
+      this.day <= 31 &&
+      this.month <= 12 &&
+      this.year > 1900 &&
+      this.year < 2020
+    ) {
+      console.log(this.day);
+      console.log(this.month);
+      console.log(this.year);
+      this.date = this.day + "-" + this.month + "-" + this.year;
+      this.unformattedDate = this.date;
+      this.showResult = true;
+    } else {
+      setTimeout(() => {
+        //alert("invalid input");
+        console.log("error");
+        this.format;
+      }, 5000);
+    }
   }
   imageCropper() {
     this.router.navigate(["./home"]);
   }
   autoFormat() {
     this.len = this.unformattedDate.toString().length;
+
     if (this.len != 8) {
       setTimeout(() => {
         this.autoFormat();
       }, 5000);
-      console.log("enter date");
     } else if ((this.len = 8)) {
       this.format();
     }
