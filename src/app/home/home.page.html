@@ -1,11 +1,9 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>
-      Crop Image
-    </ion-title>
-    <ion-button slot="end" (click)="dateFormatter()">
+    <ion-title> Crop Image </ion-title>
+    <!--<ion-button slot="end" (click)="dateFormatter()">
       Date Formatter
-    </ion-button>
+    </ion-button>-->
   </ion-toolbar>
 </ion-header>
 
@@ -15,9 +13,7 @@
   </ion-button>
 
   <ion-card>
-    <ion-card-header>
-      Result
-    </ion-card-header>
+    <ion-card-header> Result </ion-card-header>
     <ion-card-content>
       <image-cropper
         [imageBase64]="base64Image"
@@ -31,8 +27,6 @@
     <ion-button fill="outline" (click)="savebase64str()">
       Save File as Base64
     </ion-button>
-    <ion-button fill="outline" (click)="copy()">
-      Copy
-    </ion-button>
+    <ion-button fill="outline" (click)="copy()"> Copy </ion-button>
   </ion-card>
 </ion-content>

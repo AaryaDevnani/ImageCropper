@@ -40,7 +40,7 @@ export class HomePage {
   ) {}
 
   dateFormatter() {
-    this.router.navigate(["./date-formatter"]);
+    // this.router.navigate(["./date-formatter"]);
   }
 
   pickImage(sourceType) {
@@ -114,7 +114,7 @@ export class HomePage {
   copy() {
     //console.log(this.base64string);
     this.clipboard.copy(this.base64string).then(() => {
-      alert("Base 64 strring has been copied to clipboard");
+      alert("Base 64 string has been copied to clipboard");
     });
 
     //this.clipboard.clear();
